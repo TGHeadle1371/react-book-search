@@ -1,0 +1,34 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div {
+  align-content: center;
+  justify-content: center;
+  white-space: pre-wrap;
+}
+.navbar {
+  text-decoration: none;
+}
+img {
+  margin: 10px 10px;
+  white-space: nowrap
+}
+.row {
+  margin: 10px 10px;
+}
+#searchContainer {
+  justify-content: center;
+  margin: 0; 
+  padding: 0;
+  text-align: center;
+}
+button {
+  width: 25%;
+  border-radius: 5px;
+}

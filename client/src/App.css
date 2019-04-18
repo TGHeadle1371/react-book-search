@@ -6,7 +6,13 @@ body {
     justify-content: center;
     text-align: center;
 }
-
+#navTitle {
+  color: white;
+}
+#savedLink {
+  color: white;
+  align-content: center;
+}
 div {
   align-content: center;
   justify-content: center;

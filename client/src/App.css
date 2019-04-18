@@ -34,6 +34,12 @@ img {
   padding: 0;
   text-align: center;
 }
+#searchBtn {
+  min-width: 33%;
+}
+#bookInput {
+  border: .8px solid black;
+}
 button {
   border-radius: 5px;
 }

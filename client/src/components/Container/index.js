@@ -48,7 +48,7 @@ function Container(props) {
             return (
                 <div id="container">
                     <h3>Saved Books</h3>
-                    <p>None.</p>
+                    <p>There are currently no saved books!</p>
                 </div>
             );
         }

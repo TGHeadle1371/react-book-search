@@ -16,7 +16,7 @@ function Search(props) {
                     onChange={props.handleInputChange}
                     placeholder="Type Here"/>
                 <br/>
-                <button type="submit" onClick={props.handleFormSubmit}>Search</button>
+                <button id="searchBtn" type="submit" onClick={props.handleFormSubmit}>Search</button>
                 <hr/>
             </form>
         </div>

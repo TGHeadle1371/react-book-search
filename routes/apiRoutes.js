@@ -12,13 +12,25 @@ module.exports = function(app) {
                 console.log(err);
             });
     });
+    app.get("/api/books/:id", (req, res) => {
+        db.Book.findOne(req.params.id)
+            .then(books => {
+                res.json(books);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    });
+
 
     app.post("/books", (req, res) => {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
         const APIKEY = "&key=" + process.env.GBOOKSAPI;
-
+        if(!booktitle){
+            booktitle = '';
+        }
         console.log("----------------------------------");
         console.log("BOOK TITLE:" + bookTitle);
         

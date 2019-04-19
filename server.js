@@ -7,6 +7,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const bodyParser = require("body-parser");
+const MONGODB_URI = require("./config/keys");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -26,14 +27,14 @@ if (process.env.NODE_ENV === "production") {
 require("./routes/apiRoutes")(app);
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+mongoose.connect(MONGODB_URI || "mongodb://localhost/googlebooks", {
+    useNewUrlParser: true
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });

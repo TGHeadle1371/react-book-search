@@ -27,7 +27,7 @@ module.exports = function(app) {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-        let APIKEY = "&key=" + process.env.GBOOKSAPI;
+        let APIKEY = process.env.GBOOKSAPI;
         if(!bookTitle){
             bookTitle = '';
         }
@@ -36,7 +36,7 @@ module.exports = function(app) {
         
         console.log("----------------------------------");
         axios
-            .get(BASEURL + bookTitle + APIKEY)
+            .get(BASEURL + bookTitle + "&key=" + APIKEY)
             .then(response => {
                 res.json(response.data.items);
             })

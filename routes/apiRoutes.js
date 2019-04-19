@@ -27,7 +27,7 @@ module.exports = function(app) {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-        const APIKEY = "&key=" + process.env.GBOOKSAPI;
+        let APIKEY = "&key=" + process.env.GBOOKSAPI;
         if(!bookTitle){
             bookTitle = '';
         }

@@ -28,8 +28,8 @@ module.exports = function(app) {
         let bookTitle = req.body.title.replace(/\s/g, "+");
         const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
         const APIKEY = "&key=" + process.env.GBOOKSAPI;
-        if(!booktitle){
-            booktitle = '';
+        if(!bookTitle){
+            bookTitle = '';
         }
         console.log("----------------------------------");
         console.log("BOOK TITLE:" + bookTitle);
